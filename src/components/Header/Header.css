@@ -1,0 +1,13 @@
+.Header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #519872;
+	height: 50px;
+	width: 100%;
+}
+
+.logo {
+	height: 30px;
+	margin-right: 20px;
+}

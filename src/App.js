@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {HashRouter} from 'react-router-dom'
+import axios from 'axios';
+import {connect} from 'react-redux';
 import './App.css';
+import Header from './components/Header/Header';
+import routes from './routes';
+import {updateHouses} from './redux/reducer';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	componentDidMount(){
+		axios
+		.get('http://localhost:4001/api/houses')
+		.then(response=>{
+			this.props.updateHouses(response.data)
+		})
+		.catch(err=>console.log(err))
+	}
+	render() {
+		return (
+			<HashRouter>
+				<div className="App">
+					<Header/>
+					{routes}
+				</div>
+			</HashRouter>
+		);
+	}
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return {
+		houses: state.houses
+	}
+}
+
+export default connect(mapStateToProps, {updateHouses})(App);

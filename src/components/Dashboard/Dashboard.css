@@ -1,0 +1,19 @@
+.new {
+	text-decoration: none;
+	color: black;
+	background: #8AEA92;
+	padding: 3px;
+}
+
+.Dashboard {
+	background: #E5F4EC;
+	width: 70vw;
+	min-width: 378px;
+	min-height: 80vh;
+}
+
+.displayHouse {
+	list-style: none;
+	background: #DEDEDE;
+	text-align: left;
+}
