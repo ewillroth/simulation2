@@ -1,0 +1,78 @@
+.cancel {
+	text-decoration: none;
+	color: black;
+	background: #FEC2C2;
+	padding: 5px;
+}
+
+.nextstep {
+	text-decoration: none;
+	color: black;
+	background: #6f9989;
+	padding: 5px;
+}
+
+.complete {
+	text-decoration: none;
+	color: black;
+	background: #8AEA92;
+	padding: 5px;
+}
+
+
+.Step {
+	background: #E5F4EC;
+	width: 70vw;
+	min-width: 378px;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.flexrow {
+	display: flex;
+}
+
+.flexrow input {
+	margin-right: 20px;
+}
+
+.flexcolumn {
+	height: 20vh;
+	margin-left: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content:  space-evenly;
+	justify-self: center;
+	align-items: flex-start;
+}
+
+.name {
+	width: 200px;
+}
+
+.address {
+	width: 500px;
+}
+
+.city {
+	width: 150px;
+}
+
+.state {
+	width:60px;
+}
+
+.zip {
+	width: 90px;
+}
+
+.imageurl {
+	width: 500px
+}
+
+.formlabel {
+	padding: 0px;
+	margin: 0px;
+}

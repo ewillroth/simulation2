@@ -1,0 +1,3 @@
+ALTER TABLE house
+RENAME COLUMN zipcode
+TO zip;

@@ -32,7 +32,7 @@ const Dashboard = (props) => {
 	return <div className="Dashboard">
 			<div className="dashheader">
 				<h1>Dashboard</h1>
-				<Link className="new" to="/wizard">
+				<Link className="new" to="/new/1">
 					Add New Property
 				</Link>
 			</div>

@@ -19,6 +19,7 @@ const UPDATE_ZIP = "UPDATE_ZIP"
 const UPDATE_IMAGE = "UPDATE_IMAGE"
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE"
 const UPDATE_RENT = "UPDATE_RENT"
+const RESET_FORM = "RESET_FORM"
 
 export const updateHouses = (houses) => {
 	return {
@@ -74,6 +75,12 @@ export const updateRent = (rent) => {
 		payload: rent
 	}
 }
+export const resetForm = () => {
+	return {
+		type: RESET_FORM,
+		payload: ''
+	}
+}
 
 function reducer(state = initialState, action){
 	switch (action.type) {
@@ -121,6 +128,18 @@ function reducer(state = initialState, action){
 		return {
 			...state,
 			rent: action.payload
+		};
+		case RESET_FORM:
+		return {
+			...state,
+			name: '',
+			address: '',
+			city: '',
+			state: '',
+			zip: null,
+			image: '',
+			mortgage: '',
+			rent: '',
 		};
 		default:
 		return state
