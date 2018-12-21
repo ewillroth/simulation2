@@ -17,6 +17,6 @@ app.use(json())
 app.use(cors())
 
 app.get('/api/houses', controller.getHouses)
-app.delete('/api.houses/id', controller.deleteHouse)
+app.delete('/api/houses/:id', controller.deleteHouse)
 
 app.listen(process.env.PORT, console.log(`listening on port ${process.env.PORT}`))
