@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import "./StepThree.css";
-import { updateMortgage, updateRent, resetForm } from "../../redux/reducer";
+import { updateMortgage, updateRent } from "../../redux/reducer";
 import axios from "axios";
 
 const StepThree = (props) => {
@@ -10,7 +10,7 @@ const StepThree = (props) => {
 		<div className="Step">
 			<div className="dashheader">
 				<h1>Add New Listing</h1>
-				<Link onClick={() => props.resetForm()} className="cancel" to="/">
+				<Link className="cancel" to="/">
 					Cancel
 				</Link>
 			</div>
@@ -30,8 +30,8 @@ const StepThree = (props) => {
 					Previous Step
 				</Link>
 				<Link 
-				onClick={
-						axios.post('/api/houses', {
+				onClick={()=>
+						axios.post('http://localhost:4000/api/houses', {
 							name: props.name,
 							address: props.address,
 							city: props.city,
@@ -41,7 +41,7 @@ const StepThree = (props) => {
 							mortgage: props.mortgage,
 							rent: props.rent
 						})
-					.then(response=>console.log(response))
+					.then(response => console.log(response))
 					.catch(err=>console.log(err))} 
 				to="/"
 				className="complete"
@@ -65,4 +65,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { updateMortgage, updateRent, resetForm })(StepThree);
+export default connect(mapStateToProps, { updateMortgage, updateRent })(StepThree);

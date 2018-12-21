@@ -2,13 +2,13 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import "./StepOne.css";
-import { updateName, updateAddress, updateCity, updateState, updateZip, resetForm } from "../../redux/reducer";
+import { updateName, updateAddress, updateCity, updateState, updateZip} from "../../redux/reducer";
 
 const StepOne = (props) => {
 	return <div className="Step">
 			<div className="dashheader">
 				<h1>Add New Listing</h1>
-			<Link onClick={() => props.resetForm()} className="cancel" to="/">
+			<Link className="cancel" to="/">
 					Cancel
 				</Link>
 			</div>
@@ -48,4 +48,4 @@ const mapStateToProps = (state) => {
 
 }
 
-export default connect(mapStateToProps, { updateName, updateAddress, updateCity, updateState, updateZip, resetForm })(StepOne);
+export default connect(mapStateToProps, { updateName, updateAddress, updateCity, updateState, updateZip })(StepOne);

@@ -17,6 +17,7 @@ app.use(json())
 app.use(cors())
 
 app.get('/api/houses', controller.getHouses)
+app.get('/api/houses/:id', controller.getHouse)
 app.delete('/api/houses/:id', controller.deleteHouse)
 app.post('/api/houses', controller.addHouse)
 

@@ -5,6 +5,12 @@ const getHouses = (req,res,next) => {
 	.catch(err=>console.log(err))
 }
 
+const getHouse = (req,res,next) => {
+	req.app.get("db").getHouse(req.params.id)
+	.then(response=>res.status(200).json(response))
+	.catch(err=>console.log(err))
+}
+
 const deleteHouse = (req, res, next) => {
 	req.app.get("db").deleteHouse(req.params.id)
 	.then(response=>res.status(200).json(response))
@@ -20,5 +26,6 @@ const addHouse = (req,res,next) => {
 module.exports = {
 	getHouses,
 	deleteHouse,
-	addHouse
+	addHouse,
+	getHouse
 }
